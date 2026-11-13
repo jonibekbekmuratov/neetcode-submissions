@@ -1,0 +1,17 @@
+class Solution {
+    func search(_ nums: [Int], _ target: Int) -> Int {
+        var l = 0
+        var h = nums.count-1
+        while l<=h {
+            let m = (l+h)/2
+            if nums[m] == target {
+                return m
+            } else if nums[m] < target {
+                l = m+1
+            } else {
+                h = m-1
+            }
+        }
+        return -1
+    }
+}
